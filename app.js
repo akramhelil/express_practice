@@ -1,5 +1,5 @@
-var express = require('express')
-var app = express()
+const express = require('express')
+const app = express()
 
 // Routes 
 // "/" => Hi 
@@ -29,10 +29,40 @@ app.get("/cat/:id/comments", (req, res) => {
     res.send('this is the paramsa route')
 })
 
+// excercise 
+app.get('/speak/:animal', (req, res) => {
+    const sounds = {
+        pig: "Oink",
+        cow: "Mooo",
+        dog: "Woof",
+        cat: "hooomeeewan",
+        duck: "Quack"
+    }
+    let animal = req.params.animal.toLowerCase() 
+    let sound = sounds[animal]
+    
+    res.send("The "+ animal + " says " + sound)
+}) 
+
+app.get("/repeat/:message/:times", (req,res) => {
+    let message = req.params.message
+    let times = parseInt(req.params.times)
+    let result = ""
+
+    for (let i = 0; i < times; i++) {
+        result += message + " "
+    }
+    res.send(result)
+})
+
+
+
+
 // ORDER of the routes matters
-app.get("*", (req,res) => {
+app.get("*", (req, res) => {
     res.send("this is the star server maybe use for 404 page")
 })
+
 
 
 //  Tells express to start listening the port, nodemon installed for the autp hot load 
