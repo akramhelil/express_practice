@@ -19,6 +19,9 @@ app.get('/bye', (req,res) => {
 app.get("/dog", (req,res) => {
     res.send('Woof! Woof!')
 })
+app.get("/cat", (req,res) => {
+    res.send('nodemon test route')
+})
 
 app.listen(8000, () => {
     console.log("Listening", 8000)
