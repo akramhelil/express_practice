@@ -4,3 +4,11 @@
                 <%= posts[i].title %>  -<strong> <%= posts[i].author %></strong> 
         </li>
     <% } %>
+
+<hr>
+
+    <% posts.forEach((post) => {%> 
+    <li>
+        <%= post.title %>  -<strong> <%= post.author %></strong> 
+     </li> 
+<%})%> 
