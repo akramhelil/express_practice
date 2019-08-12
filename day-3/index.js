@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 
 let friendsArr =['Justin', 'Akram', 'Chris', 'Ron']
 
+// for the page view utilizing the ejs (embedded javascript)
 app.set('view engine', 'ejs')
 
 // bodyParser doc neeto to take a look and read undestand how is the exrended true means
